@@ -1,0 +1,4 @@
+Django>=2.2
+django-toolbelt
+psycopg2
+whitenoise
