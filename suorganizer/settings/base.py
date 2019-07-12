@@ -7,7 +7,6 @@ import sys
 from django.urls import reverse_lazy
 
 from ..log_filters import ManagementFilter
-import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
@@ -72,16 +71,6 @@ WSGI_APPLICATION = 'suorganizer.wsgi.application'
 
 # User
 # https://docs.djangoproject.com/en/1.8/topics/auth/customizing/#substituting-a-custom-user-model
-
-DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///{}'.format(
-            os.path.abspath(
-                os.path.join(
-                    BASE_DIR, 'db.sqlite3'))),
-    ),
-
-}
 
 AUTH_USER_MODEL = 'user.User'
 

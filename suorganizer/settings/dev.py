@@ -2,7 +2,6 @@
 # https://docs.djangoproject.com/en/1.8/ref/settings/
 
 from .base import *
-import dj_database_url
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'l)zht&^pddidsyqe$+09%se1*ba2#b_q-!j0^v$(-3c-=-vmq4'
@@ -26,13 +25,10 @@ INSTALLED_APPS += (
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///{}'.format(
-            os.path.abspath(
-                os.path.join(
-                    BASE_DIR, 'db.sqlite3'))),
-    ),
-
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 
