@@ -1,1 +1,1 @@
-web: gunicorn suorganizer.wsgi --log-file -
+web: gunicorn  suorganizer.wsgi
