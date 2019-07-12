@@ -2,4 +2,3 @@ Django>=2.2
 django-toolbelt
 django-debug-toolbar
 psycopg2
-whitenoise
