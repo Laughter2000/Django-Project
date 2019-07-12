@@ -97,11 +97,11 @@ LOGOUT_URL = reverse_lazy('dj-auth:logout')
 # Email
 # https://docs.djangoproject.com/en/1.8/topics/email/
 
-SERVER_EMAIL = 'contact@django-unleashed.com'
+SERVER_EMAIL = 'isaacamunenwa@gmail.com'
 DEFAULT_FROM_EMAIL = 'no-reply@django-unleashed.com'
 EMAIL_SUBJECT_PREFIX = '[Startup Organizer] '
 MANAGERS = (
-    ('Us', 'ourselves@django-unleashed.com'),
+    ('Us', 'isaacamunenwa@gmail.com'),
 )
 
 # Fixtures
@@ -116,6 +116,7 @@ FIXTURE_DIRS = (os.path.join(BASE_DIR, 'fixtures'),)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 # Logging
 # https://docs.djangoproject.com/en/1.8/topics/logging/
