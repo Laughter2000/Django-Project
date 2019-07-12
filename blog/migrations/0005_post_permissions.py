@@ -4,15 +4,19 @@ from __future__ import unicode_literals
 from django.contrib.auth.management import \
     create_permissions
 from django.db import migrations, models
+from django.contrib.contenttypes.models import ContentType
+from blog.models import Post
 
 
 def generate_permissions(apps, schema_editor):
+
+    content_type= ContentType.objects.get_for_model(Post)
     Permission = apps.get_model(
         'auth', 'Permission')
     try:
         Permission.objects.get(
             codename='add_post',
-            content_type='blog')
+            content_type=content_type,)
     except Permission.DoesNotExist:
         models_module = getattr(
             apps, 'models_module', None)
