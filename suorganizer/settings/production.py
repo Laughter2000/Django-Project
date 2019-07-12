@@ -11,9 +11,9 @@ from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+TEMPLATE_DEBUG = False
 
-SECRET_KEY = 'l)zht&^pddidsyqe$+09%se1*ba2#b_q-!j0^v$(-3c-=-vmq4'
-
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ALLOWED_HOSTS = ['*']
 

@@ -6,8 +6,9 @@ from .base import *
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'l)zht&^pddidsyqe$+09%se1*ba2#b_q-!j0^v$(-3c-=-vmq4'
 
-DEBUG = False
+DEBUG = True
 
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
 ALLOWED_HOSTS = []
 
@@ -15,7 +16,7 @@ INTERNAL_IPS = [
 '127.0.0.1',
 ]
 INSTALLED_APPS += (
-
+    'debug_toolbar',
     'django_extensions',
 )
 
