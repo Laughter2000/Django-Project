@@ -47,3 +47,4 @@ CACHE_MIDDLEWARE_ALIAS = 'default'
 # https://docs.djangoproject.com/en/1.8/topics/email/
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
