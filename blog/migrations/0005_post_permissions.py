@@ -5,12 +5,11 @@ from django.contrib.auth.management import \
     create_permissions
 from django.db import migrations, models
 from django.contrib.contenttypes.models import ContentType
-from blog.models import Post
 
 
 def generate_permissions(apps, schema_editor):
 
-    content_type= ContentType.objects.get_for_model(Post)
+    content_type= ContentType.objects.get_for_model(blog)
     Permission = apps.get_model(
         'auth', 'Permission')
     try:
