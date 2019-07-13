@@ -9,7 +9,7 @@ from django.contrib.contenttypes.models import ContentType
 
 
 def generate_permissions(apps, schema_editor):
-    content_type - ContentType.objects.get_for_model(Post)
+    content_type = ContentType.objects.get_for_model(Post)
     Permission = apps.get_model(
         'auth', 'Permission')
     try:
