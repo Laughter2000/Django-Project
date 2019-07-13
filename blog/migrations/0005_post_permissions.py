@@ -15,7 +15,7 @@ def generate_permissions(apps, schema_editor):
     try:
         Permission.objects.get(
             codename='add_post',
-            content_type=contenttypes)
+            content_type=content_type)
     except Permission.DoesNotExist:
         models_module = getattr(
             apps, 'models_module', None)
