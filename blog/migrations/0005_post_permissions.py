@@ -8,7 +8,7 @@ from django.db import migrations, models
 
 def generate_permissions(apps, schema_editor):
     blog = apps.get_model(
-        'auth', 'Post')
+        'blog', 'Post')
     Permission = apps.get_model(
         'auth', 'Permission')
     content_type = apps.get_model("contenttypes", "ContentType")
