@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
     dependencies = [
         ('auth',
          '0006_require_contenttypes_0002'),
-        ('post',
+        ('blog',
          '0004_add_view_future_post_permission'),
         ('contenttypes', '__latest__'),
     ]
