@@ -12,7 +12,7 @@ def generate_permissions(apps, schema_editor):
     Permission = apps.get_model(
         'auth', 'Permission')
     content_type = apps.get_model("contenttypes", "ContentType")
-    post = content_tpe.objects.get_for_model(blog)
+    post = content_type.objects.get_for_model(blog)
     try:
         Permission.objects.get(
             codename='add_post',
