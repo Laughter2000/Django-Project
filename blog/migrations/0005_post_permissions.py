@@ -7,12 +7,17 @@ from django.db import migrations, models
 
 
 def generate_permissions(apps, schema_editor):
+    blog = apps.get_model(
+        'auth', 'Post')
     Permission = apps.get_model(
-        'auth', 'Permission', 'blog')
+        'auth', 'Permission')
+    content_type = apps.get_model("contenttypes", "ContentType")
+    post = content_tpe.objects.get_for_model(blog)
     try:
         Permission.objects.get(
             codename='add_post',
-            content_type='blog')
+            name='can add post',
+            content_type=post)
     except Permission.DoesNotExist:
         models_module = getattr(
             apps, 'models_module', None)
@@ -33,8 +38,9 @@ class Migration(migrations.Migration):
     dependencies = [
         ('auth',
          '0006_require_contenttypes_0002'),
-        ('blog',
+        ('post',
          '0004_add_view_future_post_permission'),
+        ('contenttypes', '__latest__'),
     ]
 
     operations = [
