@@ -20,8 +20,7 @@ def generate_permissions(apps, schema_editor, with_create_permissions=True):
             return generate_permissions(apps, schema_editor, with_create_permissions=False)
         else:
             raise
-    bloggers = blog.objects.create(name = "can add post")
-    bloggers.Permissions.add(perm)
+
 
 
 def reverse_code(apps, schema_editor):
