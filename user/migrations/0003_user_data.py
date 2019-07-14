@@ -13,7 +13,7 @@ def add_user_data(apps, schema_editor):
     Profile = apps.get_model('user', 'Profile')
     User = apps.get_model('user', 'User')
     Laughter_user = User.objects.create(
-        email='isaacamunenwa@gmail.com',
+        email='israelamunenwa@gmail.com',
         password=make_password('laughter@2000'),
         is_active=True,
         is_staff=True,
@@ -69,7 +69,7 @@ def remove_user_data(apps, schema_editor):
     Profile.objects.get(
         slug='davidamunenwa').delete()
     User.objects.get(
-        email='isaacamunenwa@gmail.com').delete()
+        email='israelamunenwa@gmail.com').delete()
     User.objects.get(
         email='florenceamunenwa@gmail.com').delete()
     Group.objects.get(
