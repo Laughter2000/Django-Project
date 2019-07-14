@@ -13,20 +13,15 @@ def generate_permissions(apps, schema_editor):
         'auth', 'Permission')
     content_type = apps.get_model("contenttypes", "ContentType")
     post = content_type.objects.get_for_model(blog)
-    try:
-        Permission.objects.get(
-            codename='add_post',
-            name='can add post',
-            content_type=post)
-    except Permission.DoesNotExist:
-        models_module = getattr(
-            apps, 'models_module', None)
-        if models_module is None:
-            apps.models_module = True
-            create_permissions(apps, verbosity=0)
-            apps.models_module = None
-        else:
-            raise
+
+    Permission.objects.get(
+        codename='add_post',
+        name='can add post',
+        content_type=post)
+
+        apps.models_module = True
+        create_permissions(apps, verbosity=0)
+        apps.models_module = None
 
 
 def reverse_code(apps, schema_editor):
