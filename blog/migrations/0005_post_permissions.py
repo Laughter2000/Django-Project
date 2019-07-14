@@ -19,9 +19,9 @@ def generate_permissions(apps, schema_editor):
         name='can add post',
         content_type=post)
 
-        apps.models_module = True
-        create_permissions(apps, verbosity=0)
-        apps.models_module = None
+    apps.models_module = True
+    create_permissions(apps, verbosity=0)
+    apps.models_module = None
 
 
 def reverse_code(apps, schema_editor):
